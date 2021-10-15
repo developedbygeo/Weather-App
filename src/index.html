@@ -12,11 +12,18 @@
       <div class="content-wrapper">
         <section class="current-info">
           <div class="search-wrapper">
-            <input type="text" name="location" id="location" />
-            <select name="unit" id="unit">
-              <option value="celsius">°C</option>
-              <option value="celsius">°F</option>
-            </select>
+            <form action="#">
+              <input
+                placeholder="Search for a location"
+                type="text"
+                name="location"
+                id="location"
+                required
+              />
+              <button type="button" title="Search">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
           </div>
           <article class="weather">
             <div class="location-wrapper"><h1></h1></div>
@@ -31,36 +38,36 @@
               <div class="temp-sense icon-wrapper">
                 <i class="fas fa-thermometer-half"></i>
               </div>
-              <div class="title-wrapper"><p></p></div>
               <div class="info-wrapper">
-                <p><span class="unit">°C</span></p>
+                <p class="title">Feels like</p>
+                <p>25 <span class="unit">°C</span></p>
               </div>
             </div>
             <div class="humidity">
               <div class="humidity-sense icon-wrapper">
                 <i class="fas fa-tint"></i>
               </div>
-              <div class="title-wrapper"><p></p></div>
               <div class="info-wrapper">
-                <p><span class="unit">%</span></p>
+                <p class="title">Humidity</p>
+                <p><span class="unit">32%</span></p>
               </div>
             </div>
             <div class="rain-chance">
               <div class="rain-chance icon-wrapper">
                 <i class="fas fa-cloud-rain"></i>
               </div>
-              <div class="title-wrapper"><p></p></div>
               <div class="info-wrapper">
-                <p><span class="unit">%</span></p>
+                <p class="title">Precipitation</p>
+                <p><span class="unit">75%</span></p>
               </div>
             </div>
             <div class="wind">
               <div class="wind-speed icon-wrapper">
                 <i class="fas fa-wind"></i>
               </div>
-              <div class="title-wrapper"><p></p></div>
               <div class="info-wrapper">
-                <p><span class="unit">km/h</span></p>
+                <p class="title">Wind Speed</p>
+                <p>15 <span class="unit">km/h</span></p>
               </div>
             </div>
           </aside>
