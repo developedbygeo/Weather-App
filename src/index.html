@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <main>
+      <div class="content-wrapper">
+        <section class="current-info">
+          <div class="search-wrapper">
+            <input type="text" name="location" id="location" />
+            <select name="unit" id="unit">
+              <option value="celsius">°C</option>
+              <option value="celsius">°F</option>
+            </select>
+          </div>
+          <article class="weather">
+            <div class="location-wrapper"><h1></h1></div>
+            <div class="date-wrapper"><h2></h2></div>
+            <div class="temp-wrapper">
+              <h3><span class="unit">°C</span></h3>
+            </div>
+            <div class="weather-display"></div>
+          </article>
+          <aside class="weather-details">
+            <div class="temp-feeling">
+              <div class="temp-sense icon-wrapper">
+                <i class="fas fa-thermometer-half"></i>
+              </div>
+              <div class="title-wrapper"><p></p></div>
+              <div class="info-wrapper">
+                <p><span class="unit">°C</span></p>
+              </div>
+            </div>
+            <div class="humidity">
+              <div class="humidity-sense icon-wrapper">
+                <i class="fas fa-tint"></i>
+              </div>
+              <div class="title-wrapper"><p></p></div>
+              <div class="info-wrapper">
+                <p><span class="unit">%</span></p>
+              </div>
+            </div>
+            <div class="rain-chance">
+              <div class="rain-chance icon-wrapper">
+                <i class="fas fa-cloud-rain"></i>
+              </div>
+              <div class="title-wrapper"><p></p></div>
+              <div class="info-wrapper">
+                <p><span class="unit">%</span></p>
+              </div>
+            </div>
+            <div class="wind">
+              <div class="wind-speed icon-wrapper">
+                <i class="fas fa-wind"></i>
+              </div>
+              <div class="title-wrapper"><p></p></div>
+              <div class="info-wrapper">
+                <p><span class="unit">km/h</span></p>
+              </div>
+            </div>
+          </aside>
+        </section>
+        <section class="future-info"></section>
+      </div>
+    </main>
+  </body>
+</html>
