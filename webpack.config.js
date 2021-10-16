@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
@@ -19,6 +20,7 @@ module.exports = {
     maxAssetSize: 1536000,
   },
   plugins: [
+    new Dotenv(),
     new webpack.ids.HashedModuleIdsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     // new CopyWebpackPlugin({
@@ -52,7 +54,10 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread'],
+            plugins: [
+              '@babel/plugin-proposal-object-rest-spread',
+              '@babel/plugin-transform-runtime',
+            ],
             cacheDirectory: true,
           },
         },
