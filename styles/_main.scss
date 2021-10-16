@@ -1,6 +1,7 @@
 main {
   height: 100vh;
 }
+// main wrapper
 .content-wrapper {
   @include grid(repeat(2, 1fr), repeat(3, 1fr));
   gap: 1rem;
@@ -14,6 +15,7 @@ main {
   @include grid(1.2fr 0.8fr, 0.25fr repeat(2, 1fr));
   gap: 0.5rem;
 }
+// aside - additional info
 .weather-details {
   grid-area: 2/2/4/3;
   @include grid(1fr, repeat(4, 1fr));
@@ -28,48 +30,6 @@ main {
   -webkit-box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
   box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
-}
-.search-wrapper {
-  grid-area: 1/1/2/3;
-  align-self: center;
-  justify-self: center;
-  form {
-    position: relative;
-  }
-  input {
-    border: none;
-    outline: none;
-    border-bottom: 1px solid $gray;
-    height: 100%;
-    -webkit-box-shadow: 2px -2px 5px 0px rgba(0, 0, 0, 0.35);
-    -moz-box-shadow: 2px -2px 5px 0px rgba(0, 0, 0, 0.35);
-    box-shadow: 2px -2px 5px 0px rgba(0, 0, 0, 0.35);
-    border-radius: 0.25rem;
-    background: rgba($color: #000000, $alpha: 0.15);
-    color: $cultured;
-    transition: all 80ms ease;
-    @include input-placeholder {
-      text-align: center;
-      font-size: 1.3rem;
-    }
-  }
-  input:active {
-    border-bottom: 1px solid $cultured;
-  }
-  button {
-    position: absolute;
-    top: 10%;
-    right: 2%;
-    color: $gray;
-    font-size: 1.2rem;
-    transition: all 80ms ease;
-    i {
-      pointer-events: none;
-    }
-    button:hover {
-      color: $cultured;
-    }
-  }
 }
 .temp-feeling,
 .humidity,
@@ -99,6 +59,68 @@ main {
     }
   }
 }
+// search form
+.search-wrapper {
+  grid-area: 1/1/2/3;
+  align-self: center;
+  justify-self: center;
+  form {
+    position: relative;
+  }
+  input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $gray;
+    height: 100%;
+    -webkit-box-shadow: 2px -2px 5px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 2px -2px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px -2px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0.25rem;
+    background: rgba($color: #000000, $alpha: 0.1);
+    color: $cultured;
+    transition: all 80ms ease;
+    @include input-placeholder {
+      text-align: center;
+      font-size: 1.3rem;
+    }
+  }
+  input:active {
+    border-bottom: 1px solid $cultured;
+  }
+  button {
+    position: absolute;
+    top: 10%;
+    right: 2%;
+    color: $gray;
+    font-size: 1.2rem;
+    transition: all 80ms ease;
+    i {
+      pointer-events: none;
+    }
+    button:hover {
+      color: $cultured;
+    }
+  }
+}
+// article main info - weather, date, location
 .weather {
   grid-area: 2/1/4/2;
+  height: 80%;
+  align-self: center;
+  @include grid(1fr, repeat(4, 1fr));
+  background: rgba($color: #000000, $alpha: 0.1);
+  border-radius: 1rem;
+}
+.location-wrapper {
+  @include flex(flex-end, center, column);
+}
+.date-wrapper,
+.temp-wrapper {
+  @include flex(center, center, column);
+}
+.weather-display {
+  @include flex(flex-start, center, column);
+  svg {
+    font-size: 3rem;
+  }
 }
