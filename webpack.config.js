@@ -15,6 +15,9 @@ module.exports = {
     hot: true,
     port: 3000,
   },
+  watchOptions: {
+    ignored: /node_modules/,
+  },
   performance: {
     maxEntrypointSize: 1536000,
     maxAssetSize: 1536000,
