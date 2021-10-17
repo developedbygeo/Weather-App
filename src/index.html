@@ -20,18 +20,30 @@
                 id="location"
                 required
               />
-              <button type="button" title="Search">
+              <button type="button" class="search" title="Search">
                 <i class="fas fa-search"></i>
               </button>
             </form>
           </div>
           <article class="weather">
-            <div class="location-wrapper"><h1></h1></div>
-            <div class="date-wrapper"><h2></h2></div>
+            <div class="location-wrapper"><h1>Geneva</h1></div>
+            <div class="date-wrapper"><p>02/06/2022</p></div>
             <div class="temp-wrapper">
-              <h3><span class="unit">°C</span></h3>
+              <h2>23<span class="unit">°C</span></h2>
             </div>
-            <div class="weather-display"></div>
+            <div class="weather-display">
+              <i class="fas fa-snowflake"></i>
+            </div>
+            <div class="weather-minmax">
+              <div class="weather-min">
+                <p class="weather-minmax-title">High</p>
+                <p>23<span class="unit">°C</span></p>
+              </div>
+              <div class="weather-max">
+                <p class="weather-minmax-title">Low</p>
+                <p>-10<span class="unit">°C</span></p>
+              </div>
+            </div>
           </article>
           <aside class="weather-details">
             <div class="temp-feeling">
@@ -54,10 +66,10 @@
             </div>
             <div class="rain-chance">
               <div class="rain-chance icon-wrapper">
-                <i class="fas fa-cloud-rain"></i>
+                <i class="fas fa-smog"></i>
               </div>
               <div class="info-wrapper">
-                <p class="title">Precipitation</p>
+                <p class="title">Overcast</p>
                 <p><span class="unit">75%</span></p>
               </div>
             </div>
@@ -71,6 +83,12 @@
               </div>
             </div>
           </aside>
+          <div class="error-msg">
+            <h2>Error</h2>
+            <p class="error"></p>
+            <p>Please try again.</p>
+            <button class="close"><i class="fas fa-times"></i></button>
+          </div>
         </section>
         <section class="future-info"></section>
       </div>
