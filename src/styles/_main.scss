@@ -58,6 +58,9 @@ main {
       color: $gray;
     }
   }
+  .value-wrapper {
+    @include flex(center, center, row);
+  }
 }
 // search form
 .search-wrapper {
@@ -141,6 +144,10 @@ main {
   @include flex(flex-start, center, column);
   svg {
     font-size: 3rem;
+  }
+  img {
+    height: 100%;
+    width: 30%;
   }
 }
 // error message
