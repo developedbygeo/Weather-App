@@ -16,24 +16,51 @@ export default class Weather {
     this.country = country;
     this.weather = weather;
     this.time = time;
-    this.temp = temp;
-    this.tempSense = tempSense;
-    this.tempMin = tempMin;
-    this.tempMax = tempMax;
+    this.temp = temp.toFixed(1);
+    this.tempSense = tempSense.toFixed(1);
+    this.tempMin = tempMin.toFixed(1);
+    this.tempMax = tempMax.toFixed(1);
     this.humidity = humidity;
     this.overcast = overcast;
     this.wind = wind;
   }
 
-  get time() {
+  get timeAndDate() {
     return new Date(this.time * 1000).toLocaleString();
   }
 
+  get windSpeedKM() {
+    return Math.round((this.wind / 1000) * 3600);
+  }
+
+  get loc() {
+    return `${this.location}, ${this.country} `;
+  }
+
   get mainWeather() {
-    return [this.location, this.country, this.temp, this.tempMax, this.tempMin];
+    return {
+      location: this.loc,
+      date: this.timeAndDate,
+      tempNow: this.temp,
+      tempMax: this.tempMax,
+      tempMin: this.tempMin,
+    };
   }
 
   get sideInfo() {
-    return [this.tempSense, this.humidity, this.wind];
+    return {
+      temperatureFeeling: this.tempSense,
+      humidity: this.humidity,
+      overcast: this.overcast,
+      wind: this.windSpeedKM,
+    };
+  }
+
+  get temperatures() {
+    return {
+      current: this.temp,
+      min: this.tempMin,
+      max: this.tempMax,
+    };
   }
 }
