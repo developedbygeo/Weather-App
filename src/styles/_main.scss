@@ -128,9 +128,14 @@ main {
 .location-wrapper {
   @include flex(flex-end, center, column);
 }
-.date-wrapper,
-.temp-wrapper {
+.date-wrapper {
   @include flex(center, center, column);
+}
+.temp-wrapper {
+  @include flex(center, center, row);
+  span {
+    margin-left: 3%;
+  }
 }
 .weather-display {
   @include flex(flex-start, center, column);
