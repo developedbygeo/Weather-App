@@ -5,6 +5,7 @@ export default class Weather {
     weather,
     time,
     temp,
+    icon,
     tempSense,
     tempMin,
     tempMax,
@@ -17,6 +18,7 @@ export default class Weather {
     this.weather = weather;
     this.time = time;
     this.temp = temp.toFixed(1);
+    this.icon = icon;
     this.tempSense = tempSense.toFixed(1);
     this.tempMin = tempMin.toFixed(1);
     this.tempMax = tempMax.toFixed(1);
@@ -37,11 +39,16 @@ export default class Weather {
     return `${this.location}, ${this.country} `;
   }
 
+  get weatherIcon() {
+    return `<img src="http://openweathermap.org/img/w/${this.icon}.png" alt="icon-representing-weather">`;
+  }
+
   get mainWeather() {
     return {
       location: this.loc,
       date: this.timeAndDate,
       tempNow: this.temp,
+      weatherImg: this.weatherIcon,
       tempMax: this.tempMax,
       tempMin: this.tempMin,
     };
