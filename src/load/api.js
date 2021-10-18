@@ -33,20 +33,17 @@ async function handleData(data) {
   const weatherObject = new Weather(...extractedData);
   return weatherObject;
 }
-// TODO add populateDOM in eventListeners to proceed
-
-export default async function getData(query) {
+async function getData(query) {
   const key = process.env.API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${key}`;
   try {
     const response = await fetch(url, { mode: 'cors' });
     if (!response.ok) handleError(`${query} not found!`);
     const data = await response.json();
-    // handleData(data);
-    // TODO this will be handled through populateDOM
+    return data;
   } catch (error) {
     handleError(`Oops, something went wrong!`);
     return null;
   }
-  return { getData };
 }
+export { getData, handleData };
