@@ -9,13 +9,22 @@ function handleError(err) {
 }
 async function handleData(data) {
   const { temp, feels_like, humidity, temp_min, temp_max } = data.main;
-  const [{ description }, { dt }, { country }, { speed }, { name }, { all }] = [
+  const [
+    { description },
+    { dt },
+    { country },
+    { speed },
+    { name },
+    { all },
+    { icon },
+  ] = [
     data.weather[0],
     data,
     data.sys,
     data.wind,
     data,
     data.clouds,
+    data.weather[0],
   ];
   const extractedData = [
     name,
@@ -23,6 +32,7 @@ async function handleData(data) {
     description,
     dt,
     temp,
+    icon,
     feels_like,
     temp_min,
     temp_max,
