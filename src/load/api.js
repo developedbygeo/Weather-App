@@ -8,7 +8,7 @@ function handleError(err) {
   showErr();
 }
 async function handleData(data) {
-  const { temp, feels_like, humidity, temp_min, temp_max } = data.main;
+  const { temp, feels_like, humidity, temp_min, temp_max } = await data.main;
   const [
     { description },
     { dt },
