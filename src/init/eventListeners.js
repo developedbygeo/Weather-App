@@ -5,6 +5,7 @@ import { getData, handleData } from '../load/api';
 async function populateDOM() {
   const apiSuccess = await getData(verifyQuery());
   const weatherObject = await handleData(apiSuccess);
+  if (weatherObject === undefined) return;
   // Cache DOM
 
   // main weather info - article - caching
