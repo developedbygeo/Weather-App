@@ -15,6 +15,13 @@ main {
   @include grid(1.2fr 0.8fr, 0.25fr repeat(2, 1fr));
   gap: 0.5rem;
 }
+.value-wrapper-main {
+  @include grid(repeat(2, 1fr), 1fr);
+  gap: 0.25rem;
+  span {
+    font-size: 1.4rem;
+  }
+}
 // aside - additional info
 .weather-details {
   grid-area: 2/2/4/3;
@@ -58,9 +65,10 @@ main {
       color: $gray;
     }
   }
-  .value-wrapper {
-    @include flex(center, center, row);
-  }
+}
+.value-wrapper {
+  @include flex(center, center, row);
+  gap: 0.5rem;
 }
 // search form
 .search-wrapper {
@@ -122,17 +130,33 @@ main {
   .weather-min,
   .weather-max {
     @include flex(center, center, column);
+    gap: 0.5rem;
   }
   .weather-minmax-title {
     font-size: 1.3rem;
     letter-spacing: 0.15rem;
+    color: $gray;
+    width: 100%;
+    text-align: center;
   }
 }
 .location-wrapper {
   @include flex(flex-end, center, column);
+  h1 {
+    text-align: center;
+    word-wrap: anywhere;
+    height: 90%;
+    width: 90%;
+    margin: auto;
+  }
 }
 .date-wrapper {
   @include flex(center, center, column);
+  p {
+    font-size: 1.4rem;
+    letter-spacing: 0.05rem;
+    color: $gray;
+  }
 }
 .temp-wrapper {
   @include flex(center, center, row);
@@ -178,6 +202,13 @@ main {
     position: absolute;
     top: 5%;
     right: 5%;
+  }
+  .error {
+    word-wrap: anywhere;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    color: $gray;
   }
 }
 .error-msg-active {
