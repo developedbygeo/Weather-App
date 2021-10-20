@@ -33,6 +33,107 @@ $green-cta: #5cdb5c;
     @content;
   }
 }
+@mixin weatherContrast($weather) {
+  @if $weather==rain {
+    .weather-details {
+      background: rgba($color: #000000, $alpha: 0.5);
+    }
+    .weather {
+      background: rgba($color: #000000, $alpha: 0.5);
+    }
+    .search-wrapper {
+      input {
+        background: rgba($color: #000000, $alpha: 0.45);
+      }
+    }
+  }
+  @if $weather==clouds {
+    .weather-details {
+      background: rgba($color: #000000, $alpha: 0.35);
+    }
+    .weather {
+      background: rgba($color: #000000, $alpha: 0.45);
+    }
+    .search-wrapper {
+      input {
+        background: rgba($color: #000000, $alpha: 0.4);
+      }
+    }
+    .forecast-wrapper {
+      background: rgba($color: #000000, $alpha: 0.6);
+    }
+  }
+  @if $weather==clear {
+    .weather-details {
+      background: rgba($color: #000000, $alpha: 0.55);
+    }
+    .weather {
+      background: rgba($color: #000000, $alpha: 0.55);
+    }
+    .search-wrapper {
+      input {
+        background: rgba($color: #000000, $alpha: 0.55);
+      }
+    }
+  }
+  @if $weather==fog {
+    .weather-details {
+      background: rgba($color: #000000, $alpha: 0.55);
+    }
+    .weather {
+      background: rgba($color: #000000, $alpha: 0.55);
+    }
+    .search-wrapper {
+      input {
+        background: rgba($color: #000000, $alpha: 0.55);
+      }
+    }
+  }
+  @if $weather==drizzle {
+    .weather-details {
+      background: rgba($color: #000000, $alpha: 0.65);
+    }
+    .weather {
+      background: rgba($color: #000000, $alpha: 0.65);
+    }
+    .search-wrapper {
+      input {
+        background: rgba($color: #000000, $alpha: 0.65);
+      }
+    }
+  }
+  @if $weather==snow {
+    .weather-details {
+      background: rgba($color: #000000, $alpha: 0.65);
+    }
+    .weather {
+      background: rgba($color: #000000, $alpha: 0.65);
+    }
+    .search-wrapper {
+      input {
+        background: rgba($color: #000000, $alpha: 0.65);
+      }
+    }
+    .forecast-wrapper {
+      background: rgba($color: #000000, $alpha: 0.65);
+    }
+  } @else {
+    .weather-details {
+      background: rgba($color: #000000, $alpha: 0.45);
+    }
+    .weather {
+      background: rgba($color: #000000, $alpha: 0.45);
+    }
+    .search-wrapper {
+      input {
+        background: rgba($color: #000000, $alpha: 0.45);
+      }
+    }
+    .forecast-wrapper {
+      background: rgba($color: #000000, $alpha: 0.55);
+    }
+  }
+}
 @mixin mq($breakpoint) {
   @if $breakpoint==sphone {
     @media only screen and (max-width: 280px) {
