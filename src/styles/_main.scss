@@ -10,37 +10,46 @@ main {
   background-size: cover;
   color: $cultured;
 }
+// classes based on the weather and contrast settings
 .content-wrapper-clear {
   background: url('/src/img/clear.jpg') no-repeat center;
   background-size: cover;
+  @include weatherContrast(clear);
 }
 .content-wrapper-clouds {
   background: url('/src/img/clouds.jpg') no-repeat center;
   background-size: cover;
+  @include weatherContrast(clouds);
 }
 .content-wrapper-fog {
   background: url('/src/img/fog.jpg') no-repeat center;
   background-size: cover;
+  @include weatherContrast(fog);
 }
 .content-wrapper-drizzle {
   background: url('/src/img/drizzle.jpg') no-repeat center;
   background-size: cover;
+  @include weatherContrast(drizzle);
 }
 .content-wrapper-rain {
   background: url('/src/img/rain.jpg') no-repeat center;
   background-size: cover;
+  @include weatherContrast(rain);
 }
 .content-wrapper-snow {
   background: url('/src/img/snow.jpg') no-repeat center;
   background-size: cover;
+  @include weatherContrast(snow);
 }
 .content-wrapper-thunderstorm {
   background: url('/src/img/thunderstorm.jpg') no-repeat center;
   background-size: cover;
+  @include weatherContrast(thunderstorm);
 }
 .content-wrapper-tornado {
   background: url('/src/img/tornado.jpg') no-repeat center;
   background-size: cover;
+  @include weatherContrast(tornado);
 }
 
 .current-info {
@@ -73,7 +82,7 @@ main {
   height: 80%;
   margin: auto;
   text-align: center;
-  background: rgba($color: #000000, $alpha: 0.1);
+  background: rgba($color: #000000, $alpha: 0.15);
   border-radius: 2rem;
   -webkit-box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
@@ -128,7 +137,7 @@ main {
     -moz-box-shadow: 2px -2px 5px 0px rgba(0, 0, 0, 0.25);
     box-shadow: 2px -2px 5px 0px rgba(0, 0, 0, 0.25);
     border-radius: 0.25rem;
-    background: rgba($color: #000000, $alpha: 0.1);
+    background: rgba($color: #000000, $alpha: 0.2);
     color: $cultured;
     transition: all 80ms ease;
     @include input-placeholder {
@@ -161,7 +170,7 @@ main {
   align-self: center;
   @include grid(1fr, repeat(4, 1fr) 0.35fr);
   gap: 0.5rem;
-  background: rgba($color: #000000, $alpha: 0.1);
+  background: rgba($color: #000000, $alpha: 0.2);
   border-radius: 1rem;
 }
 .weather-minmax {
