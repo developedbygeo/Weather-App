@@ -31,7 +31,7 @@ export default class Weather {
     return new Date(this.time * 1000).toLocaleString();
   }
 
-  get weatherImageTitle() {
+  get weatherImageChange() {
     return `content-wrapper-${this.weather.toLowerCase()}`;
   }
 
