@@ -32,7 +32,7 @@ export default class Weather {
   }
 
   get weatherImageTitle() {
-    return this.weather.toLowerCase();
+    return `content-wrapper-${this.weather.toLowerCase()}`;
   }
 
   get windSpeedKM() {
