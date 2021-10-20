@@ -1,11 +1,10 @@
 import { removeError, getData } from './api';
-import verifyQuery from './verify.data';
+import { verifyQuery, handleBackgroundChanges } from './utils';
 
 function populateDOM(weatherObject) {
   if (!weatherObject) return;
 
   // Cache DOM
-
   // main weather info - article - caching
   const [
     locationText,
@@ -55,6 +54,9 @@ function populateDOM(weatherObject) {
     overcastText.textContent,
     windText.textContent,
   ] = [temperatureFeeling, humidity, overcast, wind];
+
+  // background rendering
+  handleBackgroundChanges(weatherObject.weatherImageChange);
 }
 
 export default function enableEventListeners() {
