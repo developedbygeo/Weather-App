@@ -9,6 +9,7 @@ main {
   background: url('/src/img/default-background.jpg') no-repeat center;
   background-size: cover;
   color: $cultured;
+  transition: all 100ms ease-in-out;
 }
 // classes based on the weather and contrast settings
 .content-wrapper-clear {
@@ -57,12 +58,11 @@ main {
   @include grid(1.2fr 0.8fr, 0.25fr repeat(2, 1fr));
   gap: 0.5rem;
   width: 95%;
-  height: 90%;
+  height: 100%;
   margin: auto;
 }
 .value-wrapper-main {
-  @include grid(repeat(2, 1fr), 1fr);
-  gap: 0.25rem;
+  @include flex(center, center, row);
   width: 100%;
   span {
     font-size: 1.6rem;
@@ -125,8 +125,10 @@ main {
   grid-area: 1/1/2/3;
   align-self: center;
   justify-self: center;
+  height: 40%;
   form {
     position: relative;
+    height: 100%;
   }
   input {
     border: none;
