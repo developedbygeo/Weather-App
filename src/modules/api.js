@@ -12,7 +12,7 @@ function removeError() {
   errorDiv.classList.remove('error-msg-active');
 }
 
-function handleData(data) {
+function handleMainData(data) {
   const {
     name,
     sys: { country },
@@ -27,7 +27,7 @@ function handleData(data) {
     dt,
     clouds: { all: overcast },
   } = data;
-  const { main: description, icon } = data.weather[0];
+  const { main: description, icon, description: weatherDesc } = data.weather[0];
   const extractedData = [
     name,
     country,
@@ -41,19 +41,18 @@ function handleData(data) {
     humidity,
     overcast,
     speed,
+    weatherDesc,
   ];
   const weatherObject = new Weather(...extractedData);
-  console.log(weatherObject);
   return weatherObject;
 }
-
 async function getData(query) {
   const key = process.env.API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${key}`;
   try {
     const response = await fetch(url, { mode: 'cors' });
     if (!response.ok) handleError(`${query} not found!`);
-    const data = handleData(await response.json());
+    const data = handleMainData(await response.json());
     return data;
   } catch (error) {
     handleError(`Oops, something went wrong!`);
