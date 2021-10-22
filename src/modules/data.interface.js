@@ -11,7 +11,8 @@ export default class Weather {
     tempMax,
     humidity,
     overcast,
-    wind
+    wind,
+    weatherDesc
   ) {
     this.location = location;
     this.country = country;
@@ -25,6 +26,7 @@ export default class Weather {
     this.humidity = humidity;
     this.overcast = overcast;
     this.wind = wind;
+    this.weatherDesc = weatherDesc;
   }
 
   get timeAndDate() {
@@ -53,6 +55,7 @@ export default class Weather {
       date: this.timeAndDate,
       tempNow: this.temp,
       weatherImg: this.weatherIcon,
+      WeatherDescription: this.weatherDesc,
       tempMax: this.tempMax,
       tempMin: this.tempMin,
     };
