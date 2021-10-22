@@ -11,6 +11,7 @@ function populateDOM(weatherObject) {
     dateText,
     tempText,
     weatherDisplayDiv,
+    weatherDescText,
     tempMinText,
     tempMaxText,
   ] = [
@@ -18,6 +19,7 @@ function populateDOM(weatherObject) {
     document.querySelector('.date-wrapper p'),
     document.querySelector('.temp-wrapper h2'),
     document.querySelector('.weather-display'),
+    document.querySelector('.desc'),
     document.querySelector('.weather-max-val'),
     document.querySelector('.weather-min-val'),
   ];
@@ -33,17 +35,33 @@ function populateDOM(weatherObject) {
   // Destructuring and populating
 
   // main weather info - article - populating
-  const { location, date, tempNow, weatherImg, tempMax, tempMin } =
-    weatherObject.mainWeather;
+  const {
+    location,
+    date,
+    tempNow,
+    weatherImg,
+    WeatherDescription,
+    tempMax,
+    tempMin,
+  } = weatherObject.mainWeather;
 
   [
     locationText.textContent,
     dateText.textContent,
     tempText.textContent,
     weatherDisplayDiv.innerHTML,
+    weatherDescText.textContent,
     tempMinText.textContent,
     tempMaxText.textContent,
-  ] = [location, date, tempNow, weatherImg, tempMax, tempMin];
+  ] = [
+    location,
+    date,
+    tempNow,
+    weatherImg,
+    WeatherDescription,
+    tempMax,
+    tempMin,
+  ];
 
   // side info - aside
   const { temperatureFeeling, humidity, overcast, wind } =
