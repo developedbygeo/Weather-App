@@ -1,9 +1,9 @@
 main {
-  height: 100vh;
+  height: 95vh;
 }
 // main wrapper
 .content-wrapper {
-  @include grid(1fr, repeat(3, 1fr));
+  @include grid(1fr, 1fr);
   gap: 1rem;
   height: 100%;
   background: url('/src/img/default-background.jpg') no-repeat center;
@@ -56,7 +56,7 @@ main {
   grid-area: 1/1/3/3;
   @include grid(1.2fr 0.8fr, 0.25fr repeat(2, 1fr));
   gap: 0.5rem;
-  width: 90%;
+  width: 95%;
   height: 90%;
   margin: auto;
 }
@@ -65,11 +65,11 @@ main {
   gap: 0.25rem;
   width: 100%;
   span {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   p {
     justify-self: flex-end;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 // aside - additional info
@@ -78,12 +78,12 @@ main {
   @include grid(1fr, repeat(4, 1fr));
   align-self: center;
   justify-self: center;
-  width: 90%;
-  height: 80%;
+  width: 100%;
+  height: 70%;
   margin: auto;
   text-align: center;
   background: rgba($color: #000000, $alpha: 0.15);
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   -webkit-box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
   box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
@@ -110,7 +110,7 @@ main {
     @include flex(space-evenly, center, column);
     height: 100%;
     .title {
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       letter-spacing: 0.1rem;
       color: $gray;
     }
@@ -166,12 +166,23 @@ main {
 // article main info - weather, date, location
 .weather {
   grid-area: 2/1/4/2;
-  height: 80%;
+  height: 70%;
   align-self: center;
-  @include grid(1fr, repeat(4, 1fr) 0.35fr);
+  @include grid(1fr, repeat(3, 1fr) 0.5fr 0.8fr);
   gap: 0.5rem;
   background: rgba($color: #000000, $alpha: 0.2);
-  border-radius: 1rem;
+  border-radius: 1.5rem;
+}
+.desc-wrapper {
+  width: 100%;
+  height: 100%;
+  @include flex(center, center, row);
+  .desc {
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    font-style: italic;
+    font-size: 1.5rem;
+  }
 }
 .weather-minmax {
   @include grid(repeat(2, 1fr), 1fr);
@@ -183,7 +194,7 @@ main {
     gap: 0.5rem;
   }
   .weather-minmax-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     letter-spacing: 0.15rem;
     color: $gray;
     width: 100%;
@@ -192,6 +203,7 @@ main {
 }
 .location-wrapper {
   @include flex(flex-end, center, column);
+  margin-top: 1.5rem;
   h1 {
     text-align: center;
     word-wrap: anywhere;
@@ -203,8 +215,9 @@ main {
 .date-wrapper {
   @include flex(center, center, column);
   p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     letter-spacing: 0.05rem;
+    font-style: italic;
     color: $gray;
   }
 }
@@ -215,7 +228,7 @@ main {
   }
 }
 .weather-display {
-  @include flex(flex-start, center, column);
+  @include flex(center, center, column);
   svg {
     font-size: 3rem;
   }
@@ -292,5 +305,30 @@ main {
   height: 100%;
   .forecast-title {
     font-size: 1.4rem;
+  }
+}
+// footer
+footer {
+  height: 5vh;
+  width: 100%;
+  background: $dark;
+  color: $cultured;
+  @include flex(center, center, row);
+  p,
+  span {
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+    font-style: italic;
+  }
+  a {
+    color: $cultured;
+    font-size: 1.4rem;
+    margin-left: 1rem;
+  }
+  svg {
+    transition: all 300ms ease-in-out;
+  }
+  svg:hover {
+    transform: rotate(360deg) scale(1.1);
   }
 }
