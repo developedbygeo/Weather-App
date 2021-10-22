@@ -1,5 +1,6 @@
 import { removeError, getData } from './api';
 import { verifyQuery, handleBackgroundChanges } from './utils';
+import loadAnimations from './animations';
 
 function populateDOM(weatherObject) {
   if (!weatherObject) return;
@@ -76,14 +77,25 @@ function populateDOM(weatherObject) {
   // background rendering
   handleBackgroundChanges(weatherObject.weatherImageChange);
 }
+async function init() {
+  const data = await getData('Amsterdam');
+  populateDOM(data);
+}
 
 export default function enableEventListeners() {
   // Cache DOM
   const searchButton = document.querySelector('.search');
   const searchInput = document.querySelector('#location');
   const closeErrorBtn = document.querySelector('.close');
+  const form = document.querySelector('form');
   // Event Listeners
-  searchButton.addEventListener('click', async () => {
+  window.addEventListener('load', init);
+  window.addEventListener('load', loadAnimations);
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
+  searchButton.addEventListener('click', async (e) => {
+    e.preventDefault();
     if (searchInput.value === '') return;
     const data = await getData(verifyQuery());
     populateDOM(data);
