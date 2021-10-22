@@ -12,7 +12,7 @@
       <div class="content-wrapper">
         <section class="current-info">
           <div class="search-wrapper">
-            <form action="#">
+            <form autocomplete="off">
               <input
                 placeholder="Search for a location"
                 type="text"
@@ -26,11 +26,14 @@
             </form>
           </div>
           <article class="weather">
-            <div class="location-wrapper"><h1>Geneva</h1></div>
-            <div class="date-wrapper"><p>02/06/2022</p></div>
+            <div class="location-wrapper"><h1></h1></div>
+            <div class="date-wrapper"><p></p></div>
             <div class="temp-wrapper">
-              <h2>23</h2>
+              <h2></h2>
               <span class="unit">°C</span>
+            </div>
+            <div class="desc-wrapper">
+              <p class="desc"></p>
             </div>
             <div class="weather-display">
               <i class="fas fa-snowflake"></i>
@@ -39,14 +42,14 @@
               <div class="weather-min">
                 <p class="weather-minmax-title">High</p>
                 <div class="value-wrapper-main">
-                  <p class="weather-max-val">23</p>
+                  <p class="weather-max-val"></p>
                   <span class="unit">°C</span>
                 </div>
               </div>
               <div class="weather-max">
                 <p class="weather-minmax-title">Low</p>
                 <div class="value-wrapper-main">
-                  <p class="weather-min-val">-10</p>
+                  <p class="weather-min-val"></p>
                   <span class="unit">°C</span>
                 </div>
               </div>
@@ -60,7 +63,7 @@
               <div class="info-wrapper">
                 <p class="title">Feels like</p>
                 <div class="value-wrapper">
-                  <p class="temp-val">25</p>
+                  <p class="temp-val"></p>
                   <span class="unit">°C</span>
                 </div>
               </div>
@@ -72,7 +75,7 @@
               <div class="info-wrapper">
                 <p class="title">Humidity</p>
                 <div class="value-wrapper">
-                  <p class="humidity-val">32</p>
+                  <p class="humidity-val"></p>
                   <span class="unit">%</span>
                 </div>
               </div>
@@ -84,7 +87,7 @@
               <div class="info-wrapper">
                 <p class="title">Overcast</p>
                 <div class="value-wrapper">
-                  <p class="overcast-val">75</p>
+                  <p class="overcast-val"></p>
                   <span class="unit">%</span>
                 </div>
               </div>
@@ -96,7 +99,7 @@
               <div class="info-wrapper">
                 <p class="title">Wind Speed</p>
                 <div class="value-wrapper">
-                  <p class="wind-val">15</p>
+                  <p class="wind-val"></p>
                   <span class="unit">km/h</span>
                 </div>
               </div>
@@ -109,8 +112,20 @@
             <button class="close"><i class="fas fa-times"></i></button>
           </div>
         </section>
-        <section class="future-info"></section>
       </div>
     </main>
+    <footer>
+      <div class="txt-wrapper">
+        <p>&#169;<span class="dev">developedbygeo</span></p>
+      </div>
+      <div class="img-wrapper">
+        <a
+          class="gh-link"
+          href="https://github.com/developedbygeo"
+          target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </footer>
   </body>
 </html>
