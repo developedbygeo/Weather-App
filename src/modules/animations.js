@@ -29,8 +29,8 @@ export default function loadAnimations() {
     )
     .from(
       '.img-wrapper',
-      { opacity: 0, x: 150, ease: 'Power0.easeNone' },
-      '-=1'
+      { opacity: 0, x: 180, ease: 'Power0.easeNone' },
+      '-=0.5'
     )
     .from(
       '.txt-wrapper',
