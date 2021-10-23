@@ -1,6 +1,12 @@
 main {
   height: 95vh;
 }
+html {
+  overflow: hidden;
+}
+body {
+  overflow: hidden;
+}
 // main wrapper
 .content-wrapper {
   @include grid(1fr, 1fr);
@@ -9,7 +15,6 @@ main {
   background: url('/src/img/default-background.jpg') no-repeat center;
   background-size: cover;
   color: $cultured;
-  transition: all 100ms ease-in-out;
 }
 // classes based on the weather and contrast settings
 .content-wrapper-clear {
@@ -152,13 +157,17 @@ main {
   }
   button {
     position: absolute;
-    top: 10%;
+    top: 25%;
     right: 2%;
     color: $gray;
     font-size: 1.2rem;
     transition: all 80ms ease;
-    i {
+    @include mq(sphone) {
+      top: 15%;
+    }
+    svg {
       pointer-events: none;
+      font-size: 1.35rem;
     }
     button:hover {
       color: $cultured;
