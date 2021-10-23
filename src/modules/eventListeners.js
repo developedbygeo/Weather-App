@@ -1,6 +1,6 @@
 import { removeError, getData } from './api';
 import { verifyQuery, handleBackgroundChanges } from './utils';
-import loadAnimations from './animations';
+import { loadAnimations, ApiAnimations } from './animations';
 
 function populateDOM(weatherObject) {
   if (!weatherObject) return;
@@ -95,10 +95,15 @@ export default function enableEventListeners() {
     e.preventDefault();
   });
   searchButton.addEventListener('click', async (e) => {
+    const tl = new ApiAnimations();
     e.preventDefault();
+    tl.enable();
     if (searchInput.value === '') return;
     const data = await getData(verifyQuery());
-    populateDOM(data);
+    setTimeout(() => {
+      tl.reverse();
+      populateDOM(data);
+    }, 3000);
   });
   closeErrorBtn.addEventListener('click', removeError);
 }
