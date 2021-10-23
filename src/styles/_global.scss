@@ -8,11 +8,14 @@ html {
   @include mq(sphone) {
     font-size: 30%;
   }
+  @include mq(phone) {
+    font-size: 60%;
+  }
   @include mq(tablet) {
     font-size: 70.5%;
   }
   @include mq(tablet-wide) {
-    font-size: 78%;
+    font-size: 80%;
   }
   @include mq(desktop-wide) {
     font-size: 90%;
