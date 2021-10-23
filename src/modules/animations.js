@@ -1,8 +1,8 @@
 import gsap from 'gsap';
 
-export default function loadAnimations() {
+function loadAnimations() {
   const timeline = gsap.timeline({
-    defaults: { duration: 2 },
+    defaults: { duration: 1.5 },
   });
 
   timeline
@@ -38,3 +38,39 @@ export default function loadAnimations() {
       '-=1'
     );
 }
+class ApiAnimations {
+  constructor() {
+    this.timeline = gsap.timeline({
+      defaults: {
+        duration: 0.3,
+        ease: 'Power2.easeInOut',
+        opacity: 0,
+        stagger: 0.4,
+      },
+    });
+  }
+
+  enable() {
+    this.timeline
+      .to('.location-wrapper', {
+        x: '-100%',
+        ease: 'slow(0.7, 0.7)',
+        stagger: 0.4,
+      })
+      .to('.temp-feeling', { x: '100%' })
+      .to('.date-wrapper', { x: '-100%' }, '-=0.15')
+      .to('.humidity', { x: '100%' }, '-=0.15')
+      .to('.temp-wrapper', { x: '-100%' }, '-=0.15')
+      .to('.rain-chance', { x: '100%' }, '-=0.15')
+      .to('.desc-wrapper', { x: '-100%' }, '-=0.2')
+      .to('.wind', { x: '100%' }, '-=0.2')
+      .to('.weather-display', { opacity: 0 }, '-=0.2')
+      .to('.weather-minmax', { opacity: 0 }, '-=0.2');
+  }
+
+  reverse() {
+    this.timeline.reverse();
+  }
+}
+
+export { loadAnimations, ApiAnimations };
