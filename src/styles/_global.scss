@@ -8,6 +8,9 @@ html {
   @include mq(sphone) {
     font-size: 30%;
   }
+  @include mq(sphone-landscape) {
+    font-size: 30%;
+  }
   @include mq(phone) {
     font-size: 60%;
   }
@@ -22,6 +25,9 @@ html {
   }
   @include mq(fourK) {
     font-size: 150%;
+  }
+  @include mq(phone-landscape) {
+    font-size: 45%;
   }
 }
 body {
