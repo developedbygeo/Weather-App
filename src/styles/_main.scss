@@ -92,6 +92,14 @@ body {
   -webkit-box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
   box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.35);
+  @include mq(desktop-wide) {
+    width: 80%;
+    margin: auto;
+  }
+  @include mq(desktop) {
+    width: 80%;
+    margin: auto;
+  }
 }
 .temp-feeling,
 .humidity,
@@ -131,6 +139,12 @@ body {
   align-self: center;
   justify-self: center;
   height: 40%;
+  @include mq(desktop-wide) {
+    height: 50%;
+  }
+  @include mq(desktop) {
+    height: 50%;
+  }
   form {
     position: relative;
     height: 100%;
@@ -168,6 +182,9 @@ body {
     @include mq(phone-landscape) {
       top: 10%;
     }
+    @include mq(tablet-landscape) {
+      top: 15%;
+    }
     svg {
       pointer-events: none;
       font-size: 1.35rem;
@@ -186,6 +203,14 @@ body {
   gap: 0.5rem;
   background: rgba($color: #000000, $alpha: 0.2);
   border-radius: 1.5rem;
+  @include mq(desktop-wide) {
+    width: 80%;
+    margin: auto;
+  }
+  @include mq(desktop) {
+    width: 80%;
+    margin: auto;
+  }
 }
 .desc-wrapper {
   width: 100%;
@@ -250,10 +275,19 @@ body {
     height: 100%;
     width: 30%;
     @include mq(sphone-landscape) {
-      width: 20%;
+      width: 15%;
     }
     @include mq(phone-landscape) {
       width: 15%;
+    }
+    @include mq(tablet-landscape) {
+      width: 20%;
+    }
+    @include mq(desktop) {
+      width: 15%;
+    }
+    @include mq(desktop-wide) {
+      width: 20%;
     }
   }
 }
