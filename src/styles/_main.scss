@@ -165,6 +165,9 @@ body {
     @include mq(sphone) {
       top: 15%;
     }
+    @include mq(phone-landscape) {
+      top: 10%;
+    }
     svg {
       pointer-events: none;
       font-size: 1.35rem;
@@ -246,6 +249,12 @@ body {
   img {
     height: 100%;
     width: 30%;
+    @include mq(sphone-landscape) {
+      width: 20%;
+    }
+    @include mq(phone-landscape) {
+      width: 15%;
+    }
   }
 }
 // error message
