@@ -189,7 +189,7 @@ $green-cta: #5cdb5c;
     }
   }
   @if $breakpoint==tablet-landscape {
-    @media only screen and (min-width: 768px) and (max-width: 1194px) and (orientation: landscape) {
+    @media only screen and (min-width: 1024px) and (max-width: 1366px) and(max-height: 840px) and (orientation: landscape) {
       @content;
     }
   }
