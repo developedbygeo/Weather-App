@@ -21,10 +21,10 @@ html {
     font-size: 80%;
   }
   @include mq(desktop-wide) {
-    font-size: 90%;
+    font-size: 100%;
   }
   @include mq(fourK) {
-    font-size: 150%;
+    font-size: 200%;
   }
   @include mq(phone-landscape) {
     font-size: 45%;
