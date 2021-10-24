@@ -94,6 +94,7 @@ export default function enableEventListeners() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
   });
+  // creates new anim. timeline, reverses/populatesDOM on successfull query to the api
   searchButton.addEventListener('click', async (e) => {
     const tl = new ApiAnimations();
     e.preventDefault();
