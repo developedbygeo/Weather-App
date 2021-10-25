@@ -46,7 +46,7 @@ export default class Weather {
   }
 
   get weatherIcon() {
-    return `<img src="http://openweathermap.org/img/w/${this.icon}.png" alt="icon-representing-weather">`;
+    return `<img src="https://openweathermap.org/img/w/${this.icon}.png" alt="icon-representing-weather">`;
   }
 
   get mainWeather() {
