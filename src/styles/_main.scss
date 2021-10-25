@@ -30,7 +30,7 @@ body {
 .content-wrapper-fog {
   background: url('/src/img/fog.jpg') no-repeat center;
   background-size: cover;
-  @include weatherContrast(fog);
+  @include weatherContrast(clear);
 }
 .content-wrapper-drizzle {
   background: url('/src/img/drizzle.jpg') no-repeat center;
@@ -57,7 +57,26 @@ body {
   background-size: cover;
   @include weatherContrast(tornado);
 }
-
+.content-wrapper-dust {
+  background: url('/src/img/dust.jpg') no-repeat center;
+  background-size: cover;
+  @include weatherContrast(clear);
+}
+.content-wrapper-haze {
+  background: url('/src/img/haze.jpg') no-repeat center;
+  background-size: cover;
+  @include weatherContrast(clear);
+}
+.content-wrapper-mist {
+  background: url('/src/img/mist.jpg') no-repeat center;
+  background-size: cover;
+  @include weatherContrast(tornado);
+}
+.content-wrapper-squall {
+  background: url('/src/img/squall.jpg') no-repeat center;
+  background-size: cover;
+  @include weatherContrast(clear);
+}
 .current-info {
   grid-area: 1/1/3/3;
   @include grid(1.2fr 0.8fr, 0.25fr repeat(2, 1fr));
@@ -278,7 +297,7 @@ body {
       width: 15%;
     }
     @include mq(phone-landscape) {
-      width: 15%;
+      width: 10%;
     }
     @include mq(tablet-landscape) {
       width: 20%;
