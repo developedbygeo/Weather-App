@@ -106,5 +106,10 @@ export default function enableEventListeners() {
       populateDOM(data);
     }, 3000);
   });
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) {
+      searchButton.click();
+    }
+  });
   closeErrorBtn.addEventListener('click', removeError);
 }
