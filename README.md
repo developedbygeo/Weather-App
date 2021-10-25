@@ -1,6 +1,6 @@
 # Weather App
 
-![image info](./src/img/sample.jpg)
+![image info](./sample.jpg)
 
 My first weather app, using async / await. Built mobile-first and fully responsive for both portrait and landscape orientation, it fetches data from the OpenWeatherMap API and displays them in two distinct HTML elements. Additionally, before querying the API, the query is validated with the Constraint Validation API, along with custom regex.
 
